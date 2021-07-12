@@ -1,0 +1,37 @@
+body {
+    width: 700px;
+    margin: 2px auto 2px auto;
+    border: solid 3px rgb(101, 41, 138);
+}
+
+h1 {
+    width: 700px;
+    text-align: center;
+    margin: 10px auto 10px auto;
+}
+
+h2 {
+    width: 600px;
+    text-align: center;
+    margin: 20px auto 20px auto;
+}
+
+img {
+    width: 600px;
+    display: block;
+    margin: auto;
+}
+
+p {
+    width: 600px;
+    text-align: justify;
+    margin: 20px auto 20px auto;
+    font-size: 18px;
+}
+
+ul {
+    width: 580px;
+    text-align: left;
+    margin: 20px auto 20px auto;;
+    font-size: 18px;
+}

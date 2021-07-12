@@ -1,0 +1,195 @@
+body {
+    min-width: 800px;
+    margin: 0;
+}
+
+div {
+    min-height: 50px;
+}
+
+p {
+    text-align: justify;
+    margin: 0;
+}
+
+.text_left {
+    width: 400px;
+}
+
+.p_width_400 {
+    width: 400px;
+}
+
+.p_width_600 {
+    width: 600px;
+}
+
+.p_width_200 {
+    width: 200px;
+}
+
+.p_width_100 {
+    width: 100px;
+}
+
+.text_font_18_600 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text_font_weight_800 {
+    font-weight: 800;
+}
+
+.text_purpl {
+    color: #6964e2;
+}
+
+.text_darc {
+    color: #102b3e;
+}
+
+.backgrnd_light {
+    background: #ced8e1;
+}
+
+.backgrnd_dark {
+    background: #102b3e;
+}
+
+.backgrnd_purpl {
+    background: #6964e2;
+}
+
+.border_radius {
+    border-radius: 10px;
+}
+
+.blok_in_header {
+    width: 200px;
+    height: 60px;
+    margin: 30px 0 30px 150px;
+}
+
+.blok_under_h1 {
+    width: 200px;
+    height: 30px;
+    min-height: 30px;
+}
+
+.blok_200_200 {
+    width: 200px;
+    height: 200px;
+}
+
+.blok_420_200 {
+    width: 420px;
+    height: 200px;
+}
+
+.blok_270_200 {
+    width: 270px;
+    height: 200px;
+}
+
+.blok_round {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.blok_30_30 {
+    width: 30px;
+    height: 30px;
+    min-height: 30px;
+}
+
+.blok_420_250 {
+    width: 420px;
+    height: 250px;
+}
+
+.blok_105_150 {
+    width: 150px;
+    height: 150px;
+}
+
+.blok_600_300 {
+    width: 600px;
+    height: 300px;
+}
+
+.blok_300_300 {
+    width: 300px;
+    height: 300px;
+}
+
+.flex {
+    display: flex;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+
+.flex_column {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.content_center {
+    justify-content: center;
+    align-items: center;
+}
+
+.align_items_left {
+    align-items: flex-start;
+}
+
+.align_items_right {
+    align-items: flex-end;
+}
+
+.position {
+    position: absolute;
+    top: 400px;
+}
+
+.margin_5 {
+    margin: 5px;
+}
+
+.margin_10 {
+    margin: 10px;
+}
+
+.margin_15 {
+    margin: 15px;
+}
+
+.margin_20 {
+    margin: 20px;
+}
+
+.margin_25 {
+    margin: 25px;
+}
+
+.margin_top_70 {
+    margin-top: 70px;
+}
+
+.margin_bottom_30 {
+    margin-bottom: 30px;
+}
+
+.margin_bottom_100 {
+    margin-bottom: 100px;
+}
+
+.margin_l_50 {
+    margin-left: 50px;
+}
+
+.margin_r_50 {
+    margin-right: 50px;
+}

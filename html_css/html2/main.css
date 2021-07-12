@@ -1,0 +1,47 @@
+body {
+    width: 1000px;
+    margin: 0 auto 0 auto;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.full_body {
+    width: 1000px;
+    border: 1px solid silver;
+}
+
+.flex {
+    display: flex;
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.w_1 {
+    width: 600px;
+    border: 1px solid silver;
+}
+
+.w_2 {
+    width: 400px;
+    border: 1px solid silver;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+img {
+    width: 598px;
+    display: block;
+}
+

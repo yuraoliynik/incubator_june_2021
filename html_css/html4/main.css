@@ -1,0 +1,306 @@
+body {
+    margin: 0;
+    font-family: 'Tahoma', serif;
+    min-width: 1000px;
+}
+
+p {
+    margin: 0;
+}
+
+/*display*/
+.flex {
+    display: flex;
+}
+
+.flex_column {
+    display: flex;
+    flex-flow: column;
+}
+
+/*background*/
+.background_dark {
+    background: #0e2c40;
+}
+
+.background_light {
+    background: #ced8e1;
+}
+
+.background_red {
+    background: #f1535f;
+}
+
+/*text_font*/
+.text_dark {
+    color: #0e2c40;
+}
+
+.text_red {
+    color: #f1535f;
+}
+
+.text_font_1 {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.text_font_2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text_font_3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.text_align_center {
+    text-align: center;
+}
+
+.text_width_1 {
+    width: 600px;
+    text-align: justify;
+}
+
+.text_width_2 {
+    width: 200px;
+    text-align: justify;
+}
+
+/*header*/
+#header {
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#header > * {
+    margin: 20px 100px;
+}
+
+#header p {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.block_header {
+    width: 200px;
+    height: 60px;
+    min-width: 200px;
+    min-height: 60px;
+    border-radius: 20px;
+}
+
+/*header_page_2*/
+#header > .flex_column {
+    align-items: flex-end;
+}
+
+.block_800_400 {
+    width: 800px;
+    height: 400px;
+    min-width: 600px;
+}
+
+.block_800_400 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.block_250_30 {
+    width: 250px;
+    height: 30px;
+    min-width: 250px;
+    border-radius: 20px;
+}
+
+/*body*/
+body > div {
+    justify-content: center;
+}
+
+body .text_font_1 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.block_200_200 {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+#body .block_200_200 {
+    margin: 20px;
+}
+
+#body .flex > div > div > div > div > div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#body > div > div > div > p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#body > div > div > div > .text_red {
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
+
+#body > div > div > div {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+#body div > .text_font_1 {
+    margin-right: 80px;
+}
+
+.red_line {
+    width: 100%;
+    height: 4px;
+}
+
+.block_round {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#round_blocks .block_round {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
+
+div > .flex_column {
+    justify-content: center;
+}
+
+.block_350_200 {
+    width: 350px;
+    height: 200px;
+    min-width: 350px;
+    border-radius: 20px;
+}
+
+div > .block_350_200 {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+/*body_page_2*/
+.blok_450_250 {
+    width: 450px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+.block_50_50 {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.block_150_150 {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+#big_block {
+    justify-content: center;
+}
+
+#big_block .flex {
+    align-items: center;
+}
+
+#big_block p {
+    width: 300px;
+}
+
+#big_block .blok_450_250 {
+    margin-bottom: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#big_block .block_150_150 {
+    margin-right: 20px;
+}
+
+#big_block > div > .flex  {
+    margin-bottom: 40px;
+}
+
+.block_round_2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#round_blocks_2 .flex_column {
+    align-items: center;
+}
+
+#round_blocks_2 > .flex_column {
+    margin-bottom: 50px;
+}
+
+#round_blocks_2 .block_round_2 {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+}
+
+/*footer*/
+#footer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer > div {
+    margin: 20px 100px;
+}
+
+#footer .block_footer {
+    margin: 10px;
+}
+
+.block_footer {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+/*footer_page_2*/
+#footer_2  {
+    justify-content: space-evenly;
+}
+
+#footer_2 .block_footer {
+    margin: 30px 10px;
+}
+
+#footer_2 .flex_column {
+    align-items: flex-start;
+}
+
+#footer_2 .flex p {
+    margin-bottom: 40px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#footer_2 .flex_column > div > p {
+    margin-bottom: 5px;
+}
+
+#footer_2 .flex_column > .text_font_2 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
