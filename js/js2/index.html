@@ -70,9 +70,14 @@
             document.write(`<h2>Завдання 1</h2>`);
 
             document.write(`<ul>`);
-            for (let i = 0; i <= listOfItems.length - 1; ++i) {
-                document.write(`<li>${listOfItems[i]}</li>`);
-            }
+            document.write(`<li>${listOfItems[0]}</li>`);
+            document.write(`<li>${listOfItems[1]}</li>`);
+            document.write(`<li>${listOfItems[2]}</li>`);
+            document.write(`<li>${listOfItems[3]}</li>`);
+            document.write(`<li>${listOfItems[4]}</li>`);
+            document.write(`<li>${listOfItems[5]}</li>`);
+            document.write(`<li>${listOfItems[6]}</li>`);
+            document.write(`<li>${listOfItems[7]}</li>`);
             document.write(`</ul>`);
 
 
@@ -120,24 +125,48 @@
                 },
             ];
 
+
             document.write(`<h2>Завдання 2</h2>`);
 
+            document.write(`<div class="example_2">NAME-${simpsons[0].name} SURNAME-${simpsons[0].surname} AGE-${simpsons[0].age} INFO-${simpsons[0].info} <img src="${simpsons[0].photo}" alt="Foto ${simpsons[0].name}"></div>`);
+            document.write(`<div class="example_2">NAME-${simpsons[1].name} SURNAME-${simpsons[1].surname} AGE-${simpsons[1].age} INFO-${simpsons[1].info} <img src="${simpsons[1].photo}" alt="Foto ${simpsons[1].name}"></div>`);
+            document.write(`<div class="example_2">NAME-${simpsons[2].name} SURNAME-${simpsons[2].surname} AGE-${simpsons[2].age} INFO-${simpsons[2].info} <img src="${simpsons[2].photo}" alt="Foto ${simpsons[2].name}"></div>`);
+            document.write(`<div class="example_2">NAME-${simpsons[3].name} SURNAME-${simpsons[3].surname} AGE-${simpsons[3].age} INFO-${simpsons[3].info} <img src="${simpsons[3].photo}" alt="Foto ${simpsons[3].name}"></div>`);
+            document.write(`<div class="example_2">NAME-${simpsons[4].name} SURNAME-${simpsons[4].surname} AGE-${simpsons[4].age} INFO-${simpsons[4].info} <img src="${simpsons[4].photo}" alt="Foto ${simpsons[4].name}"></div>`);
 
-            for (let i = 0; i <= simpsons.length - 1; ++i) {
-                document.write(`<div class="example_2">NAME-${simpsons[i].name} SURNAME-${simpsons[i].surname} AGE-${simpsons[i].age} INFO-${simpsons[i].info} <img src="${simpsons[i].photo}" alt="Foto ${simpsons[i].name}"></div>`);
-            }
 
 
             document.write(`<h2>Завдання 2.2</h2>`);
 
+            document.write(`<div  class="example_2_2">`);
+            document.write(`<h2>${simpsons[0].name} ${simpsons[0].surname}. Age is - ${simpsons[0].age}</h2>`);
+            document.write(`<p>${simpsons[0].info}</p>`);
+            document.write(`<img src="${simpsons[0].photo}" alt="Foto ${simpsons[0].name}">`);
+            document.write(`</div>`);
 
-            for (let i = 0; i <= simpsons.length - 1; ++i) {
-                document.write(`<div  class="example_2_2">`);
-                document.write(`<h2>${simpsons[i].name} ${simpsons[i].surname}. Age is - ${simpsons[i].age}</h2>`);
-                document.write(`<p>${simpsons[i].info}</p>`);
-                document.write(`<img src="${simpsons[i].photo}" alt="Foto ${simpsons[i].name}">`);
-                document.write(`</div>`);
-            }
+            document.write(`<div  class="example_2_2">`);
+            document.write(`<h2>${simpsons[1].name} ${simpsons[1].surname}. Age is - ${simpsons[1].age}</h2>`);
+            document.write(`<p>${simpsons[1].info}</p>`);
+            document.write(`<img src="${simpsons[1].photo}" alt="Foto ${simpsons[1].name}">`);
+            document.write(`</div>`);
+
+            document.write(`<div  class="example_2_2">`);
+            document.write(`<h2>${simpsons[2].name} ${simpsons[2].surname}. Age is - ${simpsons[2].age}</h2>`);
+            document.write(`<p>${simpsons[2].info}</p>`);
+            document.write(`<img src="${simpsons[2].photo}" alt="Foto ${simpsons[2].name}">`);
+            document.write(`</div>`);
+
+            document.write(`<div  class="example_2_2">`);
+            document.write(`<h2>${simpsons[3].name} ${simpsons[3].surname}. Age is - ${simpsons[3].age}</h2>`);
+            document.write(`<p>${simpsons[3].info}</p>`);
+            document.write(`<img src="${simpsons[3].photo}" alt="Foto ${simpsons[3].name}">`);
+            document.write(`</div>`);
+
+            document.write(`<div  class="example_2_2">`);
+            document.write(`<h2>${simpsons[4].name} ${simpsons[4].surname}. Age is - ${simpsons[4].age}</h2>`);
+            document.write(`<p>${simpsons[4].info}</p>`);
+            document.write(`<img src="${simpsons[4].photo}" alt="Foto ${simpsons[4].name}">`);
+            document.write(`</div>`);
 
             /*
             Використовуючи данні з масиву, за допомоги document.write
@@ -167,16 +196,29 @@
                 },
             ];
 
+
             document.write(`<h2>Завдання 3</h2>`);
 
-
             document.write(`<div class="products">`);
-            for (let i = 0; i <= products.length - 1; ++i) {
                 document.write(`<div class="product-card">`);
-                document.write(`<h3 class="product-title">${products[i].title}. Price - ${products[i].price}</h3>`);
-                document.write(`<img src="${products[i].image}" alt="Image ${products[i].title}" class="product-image">`);
+                document.write(`<h3 class="product-title">${products[0].title}. Price - ${products[0].price}</h3>`);
+                document.write(`<img src="${products[0].image}" alt="Image ${products[0].title}" class="product-image">`);
                 document.write(`</div>`);
-            }
+
+                document.write(`<div class="product-card">`);
+                document.write(`<h3 class="product-title">${products[1].title}. Price - ${products[1].price}</h3>`);
+                document.write(`<img src="${products[1].image}" alt="Image ${products[1].title}" class="product-image">`);
+                document.write(`</div>`);
+
+                document.write(`<div class="product-card">`);
+                document.write(`<h3 class="product-title">${products[2].title}. Price - ${products[2].price}</h3>`);
+                document.write(`<img src="${products[2].image}" alt="Image ${products[2].title}" class="product-image">`);
+                document.write(`</div>`);
+
+                document.write(`<div class="product-card">`);
+                document.write(`<h3 class="product-title">${products[3].title}. Price - ${products[3].price}</h3>`);
+                document.write(`<img src="${products[3].image}" alt="Image ${products[3].title}" class="product-image">`);
+                document.write(`</div>`);
             document.write(`</div>`);
 
         </script>
