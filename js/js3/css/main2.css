@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.users-box {
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+    padding: 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.user-block {
+    width: calc((100% - 20px)/2);
+    border: 1px solid silver;
+    padding: 10px 50px;
+}
+
+.user-block > h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-block > h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.address-block > p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.address-block > p:last-child {
+    margin-bottom: 0;
+}
+
