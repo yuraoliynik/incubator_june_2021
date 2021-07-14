@@ -196,10 +196,10 @@ let usersWithCities = [];
 for (let i = 0; i <= usersWithId.length - 1; i++) {
     for (let j = 0; j <= citiesWithId.length - 1; j++){
         if (usersWithId[i].id === citiesWithId[j].user_id) {
-            usersWithId[i]["address"] = citiesWithId[j];
+            usersWithCities[i] = usersWithId[i];
+            usersWithCities[i]["address"] = citiesWithId[j];
         }
     }
-    usersWithCities[i] = usersWithId[i];
 }
 
 console.log(usersWithCities);
