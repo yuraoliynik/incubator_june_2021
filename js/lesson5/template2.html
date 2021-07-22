@@ -37,6 +37,78 @@
             </p>
         </div>
 
-        <script src="js/script2.js"></script>
+        <script>
+            // Взяти файл template_2.html та працювати в ньому
+            // 1) Напишіть код, який :
+
+            // a) змінює колір тексту елемнту з ід main_header на назву групи в якій ви вчитесь (mon-year)
+            document.getElementById('main_header').innerText = 'june-2021-incubator';
+
+            // b) робить шириниу елементу ul 400px
+            document.getElementsByTagName('ul')[0].style.width = '400px';
+
+            // c) робить шириниу всіх елементів з класом linkList шириною 50%
+            for (const element of document.getElementsByClassName('linkList')) {
+                element.style.width = '50%';
+            }
+
+            // d) отримує текст який зберігається в елементі з класом listElement2
+            let listElement2Text = document.getElementsByClassName('listElement2')[0].textContent;
+            console.log(listElement2Text);
+
+            // e) отримує всі елементи li та змінює ім колір фону на сірий
+            for (const element of document.getElementsByTagName('li')) {
+                element.style.background = 'silver';
+            }
+
+            // f) отримує всі елементи 'a' та додає їм клас anchor
+            for (const element of document.getElementsByTagName('a')) {
+                element.classList.add('anchor');
+            }
+
+            // g) отримує всі елементи 'a' та у випадку, якщо текстовий контен елементу дорівнює link3, змінює йому розмір тексту на 40 пікселів
+            for (const element of document.getElementsByTagName('a')) {
+                if (element.textContent === 'link3') {
+                    element.style.fontSize = '40px';
+                }
+            }
+
+            // h) отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
+            for (const element of document.getElementsByTagName('a')) {
+                element.classList.add(`element_${element.textContent}`);
+            }
+
+            // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
+            let colorForClass = prompt('Введіть колір для елементів з класом sub-header');
+
+            for (const element of document.getElementsByClassName('sub-header')) {
+                element.style.background = colorForClass;
+            }
+
+            // j) отримує всі елементи 'sub-header' та змінює колір тексту у видаку якщо текст елемнту = content 2 segment . Колір отримати з prompt()
+            let colorTextForElement = prompt('Введіть колір шрифту елементів з класом sub-header і текстом \'content 2 segment\'');
+
+            for (const element of document.getElementsByClassName('sub-header')) {
+                if (element.textContent === 'content 2 segment') {
+                    element.style.color = colorTextForElement;
+                }
+            }
+
+            // k) отримує елемент з класом content_1 та заміняє  в ньому текст на довільний. Текст отримати з prompt()
+            let textForClass = prompt('Введіть текст для елементів з класом content_1');
+
+            for (const element of document.getElementsByClassName('content_1')) {
+                element.innerText = textForClass;
+            }
+            // l) отримати елементи p та змінити їм padding на 20px
+            for (const element of document.getElementsByTagName('p')) {
+                element.style.padding = '20px';
+            }
+
+            // m) отримати елементи з класом text2 та змінити їм текст на назву групи (mon-year)
+            for (const element of document.getElementsByClassName('text2')) {
+                element.innerText = 'june-2021-incubator';
+            }
+        </script>
     </body>
 </html>
