@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+        </style>
+
+        <title>Document</title>
+    </head>
+
+    <body>
+      <script>
+          let products = JSON.parse(localStorage.getItem('products'));
+
+          let productPageH = document.body.appendChild(document.createElement('h1'));
+          productPageH.innerText = 'Сторінка товарів';
+          productPageH.style.textAlign = 'center';
+
+          let buttonWrap = document.body.appendChild(document.createElement('div'));
+          buttonWrap.className = 'divWrap';
+
+          let productDeleteAllButton = buttonWrap.appendChild(document.createElement('button'));
+          productDeleteAllButton.innerText = 'Видалити всі товари';
+          productDeleteAllButton.style.fontSize = '20px';
+
+          let productPage = document.body.appendChild(document.createElement('div'));
+          productPage.className = 'divWrap';
+
+          for (const element of document.body.getElementsByClassName('divWrap')) {
+              element.style.display = 'flex';
+              element.style.flexFlow = 'wrap';
+              element.style.padding = '20px';
+              element.style.gridColumnGap = '2px';
+              element.style.gridRowGap = '2px';
+              element.style.width = '100%';
+          }
+
+          if (products) {
+              let productCard = '',
+                  productName = '',
+                  productQuantity = '',
+                  productPrice = '',
+                  productImg = '',
+                  productDeleteButton = '';
+
+              for (let i = 0; i < products.length; i++) {
+                  productCard = productPage.appendChild(document.createElement('div'));
+                  productCard.className = 'productCard';
+                  productCard.style.border = '1px solid silver';
+                  productCard.style.width = 'calc((100% - 8px)/5)';
+                  productCard.style.minWidth = '250px';
+                  productCard.style.padding = '0 20px 20px';
+
+                  productName = productCard.appendChild(document.createElement('h2'));
+                  productName.innerText = products[i].productName;
+                  productName.style.textAlign = 'center';
+
+                  productQuantity = productCard.appendChild(document.createElement('p'));
+                  productQuantity.innerText = products[i].productQuantity;
+
+                  productPrice = productCard.appendChild(document.createElement('p'));
+                  productPrice.innerText = products[i].productPrice + ' грн.';
+
+                  productImg = productCard.appendChild(document.createElement('img'));
+                  productImg.src = products[i].productImg;
+                  productImg.alt = `Картинка товару - ${products[i].productName}`;
+                  productImg.style.display = 'block';
+                  productImg.style.marginBottom = '20px';
+                  productImg.style.height = '250px';
+                  productImg.style.maxWidth = '210px';
+
+                  productDeleteButton = productCard.appendChild(document.createElement('button'));
+                  productDeleteButton.className = 'productDeleteButton'
+                  productDeleteButton.innerText = 'Видалити товар';
+              }
+
+              let productDeleteButtons = productPage.getElementsByClassName('productDeleteButton');
+              let productCards = productPage.getElementsByClassName('productCard');
+
+              for (let i = 0; i < products.length; i++) {
+                  productDeleteButtons[i].onclick = function () {
+                      productCards[i].style.display = 'none';
+
+                      products.splice(i, 1);
+
+                      if (products.length !== 0) {
+                          localStorage.setItem('products', JSON.stringify(products));
+                      } else {
+                          localStorage.clear();
+                      }
+
+                      window.location.reload();
+                  }
+              }
+
+              productDeleteAllButton.onclick = function () {
+                  for (const productCard of productCards) {
+                      productCard.style.display = 'none';
+                  }
+
+                  localStorage.clear();
+
+                  window.location.reload();
+              }
+          } else {
+              productPageH = document.body.appendChild(document.createElement('h2'));
+              productPageH.innerText = 'Дані товарів для відображення відсутні';
+              productPageH.style.textAlign = 'center';
+              productPageH.style.padding = '50px';
+              productPageH.style.border = '1px solid silver';
+          }
+      </script>
+    </body>
+</html>

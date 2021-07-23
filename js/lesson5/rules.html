@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fight Club</title>
+    </head>
+
+    <body>
+        <div id="content"></div>
+
+        <h1>Правила бойцовского клуба</h1>
+
+        <div id="wrap">
+            <div class="rules rule1">
+                <h2>Первое правило Бойцовского клуба.</h2>
+                <p>Никому не рассказывать о Бойцовском клубе.</p>
+            </div>
+
+            <div class="rules rule2">
+                <h2>Второе правило Бойцовского клуба.</h2>
+                <p>Никогда никому не рассказывать о Бойцовском клубе.</p>
+            </div>
+
+            <div class="rules rule3">
+                <h2>Третье правило Бойцовского клуба.</h2>
+                <p>В схватке участвуют только двое.</p>
+            </div>
+
+            <div class="rules rule4">
+                <h2>Четвертое правило Бойцовского клуба.</h2>
+                <p>Не более одного поединка за один раз.</p>
+            </div>
+
+            <div class="rules rule5">
+                <h2>Пятое правило Бойцовского клуба.</h2>
+                <p>Бойцы сражаются без обуви и голые по пояс.</p>
+            </div>
+
+            <div class="rules rule6">
+                <h2>Шестое правило Бойцовского клуба.</h2>
+                <p>Поединок продолжается столько, сколько потребуется.</p>
+            </div>
+
+            <div class="rules rule7">
+                <h2>Седьмое правило Бойцовского клуба.</h2>
+                <p>Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок
+                    окончен.</p>
+            </div>
+
+            <div class="rules rule8">
+                <h2>Восьмое и последнее правило Бойцовского клуба.</h2>
+                <p>Новичок обязан принять бой.</p>
+            </div>
+        </div>
+
+        <script>
+            // - Створити форму з інпутом для введення ім'я, та action="index2.html".
+            // При відправці данних з форми, зберігати ім'я в localstorage, та переходити на index2.html.
+            // На index2.html виводити записане в localstorage ім'я в div
+            let myForm = document.body.appendChild(document.createElement('form'));
+            myForm.id = 'myForm';
+            myForm.action = 'html2.html';
+            myForm.style.border = '2px solid #333';
+            myForm.style.padding = '10px';
+            myForm.style.width = '380px';
+
+            let userName = myForm.appendChild(document.createElement('input'));
+            userName.name = 'userName';
+            userName.type = 'text';
+            userName.value = 'Введіть ім\'я';
+            userName.style.fontSize = '25px';
+            userName.style.color = 'silver';
+            userName.style.marginRight = '10px';
+
+            // let submit = myForm.appendChild(document.createElement('input'));
+            // submit.name = 'submit'
+            // submit.type = 'submit';
+            // submit.value = 'OK';
+            // submit.style.fontSize = '25px';
+
+            let button = myForm.appendChild(document.createElement('button'));
+            button.innerText = 'OK';
+            button.style.fontSize = '25px';
+
+            userName.onfocus = function () {
+                if (userName.value === 'Введіть ім\'я') {
+                    userName.value = '';
+                }
+
+                userName.style.color = 'black';
+            }
+
+            // submit.onclick = function (e) {
+            myForm.onsubmit = function (e) {
+                if (userName.value !== 'Введіть ім\'я' && userName.value !== '') {
+                    localStorage.setItem('user', JSON.stringify({userName: userName.value}));
+
+                    // window.location.href = 'html2.html';
+                    // window.open('html2.html');
+
+                    userName.value = 'Введіть ім\'я';
+                    userName.style.color = 'silver';
+                } else {
+                    e.preventDefault();
+                }
+            }
+
+            // - Імітуємо наповнення інтернет магазину товарами :
+            //     Створити форму з наступними полями :
+            // - назва товару
+            // - кількість товару
+            // - ціна товару
+            // - картинка товару (посилання з інтернету)
+            // Зберігати товари в масив в локалсорадж. При збережені товару з форми, action не повинно відбуватись.
+            //     створити елемент <a href='list.html'> На сторінку товарів</a>, та list.html, при переході на який відобразити на сторінці всі товари.
+            // На сторінці  list.html побудувати кнопку яка видаляє всі товари з корзини та локалстораджа.
+            //     До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний обраний  товар
+            let productForm = document.body.appendChild(document.createElement('form'));
+            productForm.name = 'productForm';
+            productForm.style.border = '2px solid #333';
+            productForm.style.padding = '0 50px 50px 50px';
+
+            let productFormH = productForm.appendChild(document.createElement('h2'));
+            productFormH.innerText = 'Форма додавання товару';
+
+            let productFormWrap = productForm.appendChild(document.createElement('div'));
+            productFormWrap.style.display = 'flex';
+            productFormWrap.style.flexFlow = 'column';
+            productFormWrap.style.marginBottom = '30px';
+
+            let productFormInputs = [];
+            for (let i = 0; i < 4; i++) {
+                productFormInputs.push(productFormWrap.appendChild(document.createElement('input')));
+                productFormInputs[i].name = `input${i}`;
+                productFormInputs[i].type = 'text';
+                productFormInputs[i].style.fontSize = '15px';
+                productFormInputs[i].style.marginBottom = '10px';
+            }
+
+            let productFormInputsValue = [
+                'Введіть назву товару',
+                'Введіть кількість товару',
+                'Введіть ціну товару',
+                'Введіть посилання на картинку товару'
+            ]
+
+            function productFormInputsDefault() {
+                for (let i = 0; i < productFormInputs.length; i++) {
+                    productFormInputs[i].value = productFormInputsValue[i];
+                    productFormInputs[i].style.color = '#607d8b';
+                }
+            }
+
+            productFormInputsDefault();
+
+            productFormInputs[3].style.marginBottom = '30px';
+
+            let productFormButton = productFormWrap.appendChild(document.createElement('button'));
+            productFormButton.innerText = 'Зберегти дані товару';
+            productFormButton.style.width = '200px';
+            productFormButton.style.fontSize = '15px';
+
+            let productFormA = productForm.appendChild(document.createElement('a'));
+            productFormA.innerText = 'На сторінку товарів';
+            productFormA.href = 'list.html';
+            productFormA.style.fontSize = '20px';
+
+            for (const productFormInput of productFormInputs) {
+                let value = productFormInput.value;
+
+                productFormInput.addEventListener('click', function (e) {
+                    if (e.target.value === value) {
+                        productFormInput.value = '';
+                    }
+
+                    productFormInput.style.color = 'black';
+                });
+
+                productFormInput.addEventListener('blur', function (e) {
+                    if (e.target.value === '') {
+                        productFormInput.value = value;
+                        productFormInput.style.color = '#607d8b';
+                    }
+                });
+            }
+
+            let products = [];
+
+
+            productForm.onsubmit = function (e) {
+                e.preventDefault();
+
+                let product = {productName: '', productQuantity: '', productPrice: '', productImg: ''}
+                let i = 0;
+
+                for (const property in product) {
+                    product[property] = productFormInputs[i].value;
+                    i++;
+                }
+
+                products = JSON.parse(localStorage.getItem('products')) || [];
+
+                products.push(product);
+
+                localStorage.setItem('products', JSON.stringify(products));
+
+                productFormInputsDefault();
+            }
+
+            // new task
+            let users = [
+                {
+                    name: 'vasya',
+                    age: 31,
+                    status: false,
+                    address: {city: 'Lviv', country: 'Ukraine', street: 'Shevchenko', houseNumber: 1}
+                }, {
+                    name: 'petya',
+                    age: 30,
+                    status: true,
+                    address: {city: 'New York', country: 'USA', street: 'East str', houseNumber: 21}
+                }, {
+                    name: 'kolya',
+                    age: 29,
+                    status: true,
+                    address: {city: 'Budapest', country: 'Hungary', street: 'Kuraku', houseNumber: 78}
+                }, {
+                    name: 'olya',
+                    age: 28,
+                    status: false,
+                    address: {city: 'Prague', country: 'Czech', street: 'Paster', houseNumber: 56}
+                }, {
+                    name: 'max',
+                    age: 30,
+                    status: true,
+                    address: {city: 'Istanbul', country: 'Turkey', street: 'Mikar', houseNumber: 39}
+                }, {
+                    name: 'anya',
+                    age: 31,
+                    status: false,
+                    address: {city: 'Rio', country: 'Brasil', street: 'Ronaldi', houseNumber: 5}
+                }, {
+                    name: 'oleg',
+                    age: 28,
+                    status: false,
+                    address: {city: 'Montreal', country: 'Canada', street: 'Acusto', houseNumber: 90}
+                }, {
+                    name: 'andrey',
+                    age: 29,
+                    status: true,
+                    address: {city: 'Quebeck', country: 'Canada', street: 'Binaro', houseNumber: 33}
+                }, {
+                    name: 'masha',
+                    age: 30,
+                    status: true,
+                    address: {city: 'Moscow', country: 'Russia', street: 'Gogolia', houseNumber: 1}
+                }, {
+                    name: 'olya',
+                    age: 31,
+                    status: false,
+                    address: {city: 'Portland', country: 'USA', street: 'Forest str', houseNumber: 4}
+                }, {
+                    name: 'max',
+                    age: 31,
+                    status: true,
+                    address: {city: 'Cairo', country: 'Egypt', street: 'Seashore', houseNumber: 45}
+                }
+            ];
+
+            // - З масиву users за допомогою циклу витягнути адреси користувачів і записати (скопіювати) їх в інший порожній масив.
+            let address = [];
+
+            for (let i = 0; i < users.length; i++) {
+                address.push(users[i].address);
+            }
+
+            console.log(address);
+
+            // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement. Всі данні в одному блоці.
+            let userCard = '',
+                userProperty = '';
+                userAddress = '';
+
+            for (const user of users) {
+                userCard = document.body.appendChild(document.createElement('div'));
+                userCard.style.padding = '20px';
+                userCard.style.border = '1px solid silver';
+                userCard.style.marginBottom = '20px';
+
+                for (const property in user) {
+                    if (property !== 'address') {
+                        userCard.innerText = userCard.textContent + `${property}: ${user[property]} `;
+                    }
+                }
+
+                userCard.innerText = userCard.textContent + ' adress{ ';
+
+                for (const property in user.address) {
+                    userCard.innerText = userCard.textContent + `${property}: ${user.address[property]} `;
+                }
+
+                userCard.innerText = userCard.textContent + '}';
+            }
+
+
+            //
+            document.body.appendChild(document.createElement('div')).innerText = '--------------------------------------------------------------------------------------------------';
+
+            // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
+            for (const user of users) {
+                userCard = document.body.appendChild(document.createElement('div'));
+                userCard.style.padding = '20px';
+                userCard.style.border = '1px solid silver';
+                userCard.style.marginBottom = '20px';
+
+                for (const property in user) {
+                    userProperty = userCard.appendChild(document.createElement('div'));
+                    if (property !== 'address') {
+                        userProperty.innerText = `${property}: ${user[property]}`;
+                    }
+                }
+
+                userProperty = userCard.appendChild(document.createElement('div'));
+
+                userProperty.innerText = 'adress{ ';
+
+                for (const property in user.address) {
+                    userProperty.innerText = userProperty.textContent + `${property}: ${user.address[property]} `;
+                }
+
+                userProperty.innerText = userProperty.textContent + '}';
+            }
+
+            //
+            document.body.appendChild(document.createElement('div')).innerText = '--------------------------------------------------------------------------------------------------';
+
+            // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
+            for (const user of users) {
+                userCard = document.body.appendChild(document.createElement('div'));
+                userCard.style.padding = '20px';
+                userCard.style.border = '1px solid silver';
+                userCard.style.marginBottom = '20px';
+
+                for (const property in user) {
+                    userProperty = userCard.appendChild(document.createElement('div'));
+                    if (property !== 'address') {
+                        userProperty.innerText = `${property}: ${user[property]}`;
+                    }
+                }
+
+                userAddress = userCard.appendChild(document.createElement('div'));
+                userAddress.style.padding = '5px';
+                userAddress.style.border = '1px solid silver';
+
+                for (const property in user.address) {
+                    userProperty = userAddress.appendChild(document.createElement('div'));
+                    userProperty.innerText = userProperty.textContent + `${property}: ${user.address[property]} `;
+                }
+            }
+
+
+            // - є сторінка rules.html. Контентом сторінки є заголовки та параграфи. Заголовки (h2) характеризують тему контенту яка вказана в параграфі.
+            //     створити скріпт, котрий зчитує всі заголовки, та робить в блоці з id=content з них список(ul>li), який буде змістом того, що знаходиться на сторінці.
+            //     Скріпт повинен працювати навіть якщо кількість блоків з заголовком та параграфом зміниться.
+            let content = document.getElementById('content');
+            let listWrap = content.appendChild(document.createElement('ul'));
+            let listClassRules = document.body.getElementsByClassName('rules');
+            let item = '';
+
+            for (const divElemenet of listClassRules) {
+                item = listWrap.appendChild(document.createElement('li'));
+                item.innerText = divElemenet.getElementsByTagName('h2')[0].textContent;
+            }
+
+
+            // -Є масив котрий характеризує правила. Створити скрипт який ітерує цей масив, та робить з кожне правило в окремому блоці.
+            //     При цому в блоці, номер правила записати в свій блок, текст правила записати в свій окремий блок.
+            //     Результатом відпрацювання скріпта повинна бути структура яка міститься в блоці wrap файла rule.html
+            let rules = [
+                {
+                    title: 'Первое правило Бойцовского клуба.',
+                    body: 'Никому не рассказывать о Бойцовском клубе.'
+                },
+                {
+                    title: 'Второе правило Бойцовского клуба.',
+                    body: 'Никогда никому не рассказывать о Бойцовском клубе.'
+                },
+                {
+                    title: 'Третье правило Бойцовского клуба.',
+                    body: 'В схватке участвуют только двое.'
+                },
+                {
+                    title: 'Четвертое правило Бойцовского клуба.',
+                    body: 'Не более одного поединка за один раз.'
+                },
+                {
+                    title: 'Пятое правило Бойцовского клуба.',
+                    body: 'Бойцы сражаются без обуви и голые по пояс.'
+                },
+                {
+                    title: 'Шестое правило Бойцовского клуба.',
+                    body: 'Поединок продолжается столько, сколько потребуется.'
+                },
+                {
+                    title: 'Седьмое правило Бойцовского клуба.',
+                    body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
+                },
+                {
+                    title: 'Восьмое и последнее правило Бойцовского клуба.',
+                    body: 'Новичок обязан принять бой.'
+                },
+            ];
+
+            let rulesWrap = document.body.appendChild(document.createElement('div'));
+
+            let ruleCard = '';
+
+            for (const rule of rules) {
+                ruleCard = rulesWrap.appendChild(document.createElement('div'));
+                ruleCard.appendChild(document.createElement('h2')).innerText = rule.title;
+                ruleCard.appendChild(document.createElement('p')).innerText = rule.body;
+            }
+        </script>
+    </body>
+</html>

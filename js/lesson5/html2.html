@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Document</title>
+    </head>
+
+    <body>
+      <script>
+          // localStorage.clear();
+          let divForUserName = document.body.appendChild(document.createElement('div'));
+
+          if (localStorage.getItem('user')) {
+              divForUserName.innerText = JSON.parse(localStorage.getItem('user')).userName;
+          } else {
+              divForUserName.innerText = 'Ім\'я користувача не було збережено';
+          }
+
+          divForUserName.style.fontSize = '30px';
+      </script>
+    </body>
+</html>
