@@ -44,15 +44,8 @@
                 element.style.width = '100%';
             }
 
-            let productCard = '',
-                productName = '',
-                productQuantity = '',
-                productPrice = '',
-                productImg = '',
-                productDeleteButton = '';
-
             for (let i = 0; i < products.length; i++) {
-                productCard = productPage.appendChild(document.createElement('div'));
+                let productCard = productPage.appendChild(document.createElement('div'));
                 productCard.id = i;
                 productCard.className = 'productCard';
                 productCard.style.border = '1px solid silver';
@@ -60,17 +53,17 @@
                 productCard.style.minWidth = '250px';
                 productCard.style.padding = '0 20px 20px';
 
-                productName = productCard.appendChild(document.createElement('h2'));
+                let productName = productCard.appendChild(document.createElement('h2'));
                 productName.innerText = products[i].productName;
                 productName.style.textAlign = 'center';
 
-                productQuantity = productCard.appendChild(document.createElement('p'));
+                let productQuantity = productCard.appendChild(document.createElement('p'));
                 productQuantity.innerText = products[i].productQuantity;
 
-                productPrice = productCard.appendChild(document.createElement('p'));
+                let productPrice = productCard.appendChild(document.createElement('p'));
                 productPrice.innerText = products[i].productPrice + ' грн.';
 
-                productImg = productCard.appendChild(document.createElement('img'));
+                let productImg = productCard.appendChild(document.createElement('img'));
                 productImg.src = products[i].productImg;
                 productImg.alt = `Картинка товару - ${products[i].productName}`;
                 productImg.style.display = 'block';
@@ -78,7 +71,7 @@
                 productImg.style.height = '250px';
                 productImg.style.maxWidth = '210px';
 
-                productDeleteButton = productCard.appendChild(document.createElement('button'));
+                let productDeleteButton = productCard.appendChild(document.createElement('button'));
                 productDeleteButton.innerText = 'Видалити товар';
 
                 productDeleteButton.onclick = function () {
