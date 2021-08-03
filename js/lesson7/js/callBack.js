@@ -107,17 +107,3 @@ actionDay(1, (v) => {
         });
     });
 });
-
-// console.log(await actionDay(2));
-// console.log(await action(1, 'я прокидаюсь', 200));
-// console.log(await action(2, 'я чищу зуби', 150));
-// console.log(await action(3, 'я снідаю', 300));
-// console.log(await action(4, 'я йду на зупинку маршрутки', 200));
-// console.log(await action(5, 'я їду на роботу', 600));
-// console.log(await action(6, 'я на роботі', 900));
-// console.log(await action(7, 'я повертаюсь до дому', 1000));
-// console.log(await action(8, 'я вечеряю', 300));
-// console.log(await action(9, 'я прямую в спортзал', 400));
-// console.log(await action(10, 'я виконую вправи в залі', 350, 'no'));
-// console.log(await action(11, 'я топаю до дому', 400));
-// console.log(await action(12, 'я йду спати', 150));
